@@ -21,6 +21,7 @@
 #include <linux/leds.h>
 #include <linux/qpnp/pwm.h>
 #include <linux/err.h>
+#include <linux/display_state.h>
 
 #include "mdss_dsi.h"
 
@@ -31,6 +32,12 @@
 //jowen.li@swdp.system, 2015/06/27 fix CTS framerate issue ,supply by york.zhang
 #define DEFAULT_MDP_TRANSFER_TIME 14000
 #endif 
+bool display_on = true;
+
+bool is_display_on()
+{
+	return display_on;
+}
 DEFINE_LED_TRIGGER(bl_led_trigger);
 
 void mdss_dsi_panel_pwm_cfg(struct mdss_dsi_ctrl_pdata *ctrl)
