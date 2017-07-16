@@ -2727,16 +2727,13 @@ static struct module *setup_load_info(struct load_info *info, int flags)
 
 static int check_modinfo(struct module *mod, struct load_info *info, int flags)
 {
-
-	int err;
-
-/*	const char *modmagic = get_modinfo(info, "vermagic"); 
+	const char *modmagic = get_modinfo(info, "vermagic");
 	int err;
 
 	if (flags & MODULE_INIT_IGNORE_VERMAGIC)
 		modmagic = NULL;
 
-	
+	/* This is allowed: modprobe --force will invalidate it. */
 	if (!modmagic) {
 		err = try_to_force_load(mod, "bad vermagic");
 		if (err)
@@ -2746,7 +2743,6 @@ static int check_modinfo(struct module *mod, struct load_info *info, int flags)
 		       mod->name, modmagic, vermagic);
 		return -ENOEXEC;
 	}
-*/
 
 	if (!get_modinfo(info, "intree"))
 		add_taint_module(mod, TAINT_OOT_MODULE, LOCKDEP_STILL_OK);
@@ -2756,7 +2752,6 @@ static int check_modinfo(struct module *mod, struct load_info *info, int flags)
 		printk(KERN_WARNING "%s: module is from the staging directory,"
 		       " the quality is unknown, you have been warned.\n",
 		       mod->name);
-                        err = try_to_force_load(mod, "bad vermagic");
 	}
 
 	/* Set up license info based on the info section */
