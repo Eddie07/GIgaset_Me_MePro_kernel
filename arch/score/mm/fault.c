@@ -47,7 +47,6 @@ asmlinkage void do_page_fault(struct pt_regs *regs, unsigned long write,
 	struct task_struct *tsk = current;
 	struct mm_struct *mm = tsk->mm;
 	const int field = sizeof(unsigned long) * 2;
-	unsigned long flags = 0;
 	siginfo_t info;
 	int fault;
 
@@ -75,9 +74,6 @@ asmlinkage void do_page_fault(struct pt_regs *regs, unsigned long write,
 	*/
 	if (in_atomic() || !mm)
 		goto bad_area_nosemaphore;
-
-	if (user_mode(regs))
-		flags |= FAULT_FLAG_USER;
 
 	down_read(&mm->mmap_sem);
 	vma = find_vma(mm, address);
@@ -115,6 +111,8 @@ survive:
 	if (unlikely(fault & VM_FAULT_ERROR)) {
 		if (fault & VM_FAULT_OOM)
 			goto out_of_memory;
+		else if (fault & VM_FAULT_SIGSEGV)
+			goto bad_area;
 		else if (fault & VM_FAULT_SIGBUS)
 			goto do_sigbus;
 		BUG();
