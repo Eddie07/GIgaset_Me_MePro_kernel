@@ -1,0 +1,13 @@
+#
+# Tablet driver configuration
+#
+
+config INPUT_FPC102X
+	tristate "FingerPrintCard FPC102X support (SPI)"
+	depends on SPI
+	help
+	  Say Y here if you want to support an FPC102X touch sensor.
+
+	  To compile this driver as a module, choose M here: the
+	  module will be called acecad.
+

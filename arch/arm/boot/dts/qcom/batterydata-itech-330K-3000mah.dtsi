@@ -1,0 +1,50 @@
+/* #ifdef GIGASET_EDIT */
+/* byron.ran@swdp.driver, 2015/04/30, add the battery profile */
+qcom,x9_w_330k_3000mah {
+	/* #1954164_Huiye_X9_W_3000mAh_averaged_MasterSlave_Apr16th2015*/
+	qcom,max-voltage-uv = <4350000>;
+	qcom,nom-batt-capacity-mah = <3000>;
+	qcom,batt-id-kohm = <330>;
+	qcom,battery-beta = <3435>;
+	qcom,battery-type = "x9_w_330k_3000mah";
+	qcom,chg-rslow-comp-c1 = <2911113>;
+	qcom,chg-rslow-comp-c2 = <3449648>;
+	qcom,chg-rs-to-rslow = <1459707>;
+	qcom,chg-rslow-comp-thr = <0x99>;
+	qcom,checksum = <0x11C1>;
+	qcom,gui-version = "PMI8994GUI - 2.1.6.4";
+	qcom,fg-profile-data = [
+		 E2 83 D6 7C 
+		 F2 80 04 77 
+		 45 83 7F 63 
+		 07 80 2F 8C 
+		 19 82 12 99 
+		 EB B6 55 C2 
+		 58 18 05 88 
+		 CF 7D 8D 81 
+		 00 7C 6B 83 
+		 13 75 22 8A 
+		 07 95 4B 82 
+		 97 98 6D B6 
+		 08 C2 58 15 
+		 BC 0B C7 58 
+		 CE 6E 77 FE 
+		 0D 3E C8 45 
+		 02 42 00 00 
+		 BA 4C E3 40 
+		 3E 2D 00 00 
+		 00 00 00 00 
+		 00 00 00 00 
+		 B3 72 32 71 
+		 0D 66 65 81 
+		 E1 75 CC 68 
+		 8D 64 89 79 
+		 83 74 CA 61 
+		 AD 5B 92 AA 
+		 27 EF 60 2A 
+		 5D A0 71 0C 
+		 28 00 FF 36 
+		 F0 11 30 03 
+		 00 00 00 00 
+	];
+};

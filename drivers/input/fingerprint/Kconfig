@@ -1,0 +1,38 @@
+#
+# Tablet driver configuration
+#
+menuconfig INPUT_FINGERPRINT
+	bool "Fingerprint"
+	help
+	  Say Y here, and a list of supported tablets will be displayed.
+	  This option doesn't affect the kernel.
+
+	  If unsure, say Y.
+
+if INPUT_FINGERPRINT
+
+menuconfig INPUT_FPC
+	bool "Fingerprintcard senseor"
+	help
+	  Say Y here if you want to support fpc touch sensor.
+
+	  If unsure, say Y.
+
+if INPUT_FPC
+source "drivers/input/fingerprint/fpc/Kconfig"
+source "drivers/input/fingerprint/fpc/touch/Kconfig"
+endif
+
+
+menuconfig INPUT_MIY
+	bool "microarray fingerprint sensor"
+	help
+	  Say Y here if you want to support mediatek touch sensor.
+
+	  If unsure, say Y.
+
+if INPUT_MIY
+source "drivers/input/fingerprint/microarray/Kconfig"
+endif
+
+endif
