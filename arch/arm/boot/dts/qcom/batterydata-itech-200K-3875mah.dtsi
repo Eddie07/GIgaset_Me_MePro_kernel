@@ -1,0 +1,49 @@
+
+qcom,x9_w_200k_3875mah {
+	/* #2002854_Huiye_X9_W_3875mAh_averaged_MasterSlave_May13th2015*/
+	qcom,max-voltage-uv = <4400000>;
+	qcom,nom-batt-capacity-mah = <3875>;
+	qcom,batt-id-kohm = <200>;
+	qcom,battery-beta = <3435>;
+	qcom,battery-type = "x9_w_200k_3875mah";
+	qcom,chg-rslow-comp-c1 = <2646805>;
+	qcom,chg-rslow-comp-c2 = <3004805>;
+	qcom,chg-rs-to-rslow = <1278714>;
+	qcom,chg-rslow-comp-thr = <0x99>;
+	qcom,checksum = <0xFDFA>;
+	qcom,gui-version = "PMI8994GUI - 2.1.6.5";
+	qcom,fg-profile-data = [
+		 EE 83 71 7D 
+		 AF 81 42 7C 
+		 59 83 48 67 
+		 5F 83 E5 8D 
+		 0F 82 44 99 
+		 1D B7 6D C2 
+		 5E 18 04 88 
+		 F9 7D 0A 82 
+		 94 7C 5D 83 
+		 63 5C 30 83 
+		 B4 8E 58 82 
+		 35 98 A2 B5 
+		 0F C1 58 14 
+		 D1 0F 6B 58 
+		 14 70 01 FE 
+		 BB 44 08 3E 
+		 07 41 00 00 
+		 99 46 3B 41 
+		 EA 44 00 00 
+		 00 00 00 00 
+		 00 00 00 00 
+		 00 72 C1 70 
+		 83 63 37 83 
+		 89 75 E6 63 
+		 BF 5E 9A 7A 
+		 60 74 73 61 
+		 3C 68 B7 AB 
+		 21 8D 60 4C 
+		 5E A0 71 0C 
+		 28 00 FF 36 
+		 F0 11 30 03 
+		 00 00 00 0C 
+	];
+};

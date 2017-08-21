@@ -1,0 +1,8 @@
+config SND_SOC_TFA98XX
+ bool "tfa9890"
+ default y
+
+
+config SND_SOC_TFA98XX_DEBUG
+ bool "tfa9890 debug"
+ default y
